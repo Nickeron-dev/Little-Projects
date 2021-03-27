@@ -4,15 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class ClickForever implements ActionListener { // implement KeyListener
+public class ClickForever implements ActionListener {
   public static boolean isClicking = false;
   JFrame frame;
   JButton button;
-  JToggleButton off;
+  JButton off;
   JTextField repeat;
   JTextField delay;
   JLabel repeatLabel;
   JLabel delayLabel;
+  JButton limited;
 
   public ClickForever() {
     frame = new JFrame("AutoClicker");
@@ -20,93 +21,56 @@ public class ClickForever implements ActionListener { // implement KeyListener
     frame.setLayout(new FlowLayout());
     frame.setSize(500, 67);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     button = new JButton("ON");
-    off = new JToggleButton("OFF");
+    off = new JButton("OFF");
     repeat = new JTextField("3000", 5);
     delay = new JTextField("10", 5);
     repeatLabel = new JLabel("repeat");
-    delayLabel = new JLabel("delay"); 
-    
-    
-    //int leftTimes = Integer.parseInt(repeat.getText());
-/*
-    button.addKeyListener(this);
-    off.addKeyListener(this);
-    frame.addKeyListener(this);
-    */
+    delayLabel = new JLabel("delay");
+    limited = new JButton("Limited");
 
     button.addActionListener(this);
     off.addActionListener(this);
-	
+    limited.addActionListener(this);
+
     frame.add(repeatLabel);
     frame.add(repeat);
+    frame.add(limited);
+    frame.add(delayLabel);
+    frame.add(delay);
     frame.add(button);
     frame.add(off);
-    frame.add(delay);
-    frame.add(delayLabel);
 
     frame.setVisible(true);
     frame.setResizable(false);
   }
 
     public void actionPerformed(ActionEvent actionEvent) {
-      System.out.println(actionEvent.getActionCommand());
       if (actionEvent.getActionCommand().equals("ON")) {
-        isClicking = true;
-        pressing();
-        System.out.println("ON here");
+        isClicking = true; // this variable is checked and used in main() method
       }
       if (actionEvent.getActionCommand().equals("OFF")) {
-        isClicking = false;
-        System.out.println("OFF here");
+        isClicking = false; // this variable is checked and used in main() method
       }
 
-    }
-/*
-    public void keyPressed(KeyEvent event) {
-      System.out.println("Pressed");
-      if (event.getKeyCode() == KeyEvent.VK_K) {
-        System.out.println("KKKeeKK");
-        isClicking = false;
+      if (actionEvent.getActionCommand().equals("Limited")) {
+        pressing();
       }
     }
-
-    public void keyReleased(KeyEvent event) {
-      System.out.println("Released");
-      if (event.getKeyCode() == KeyEvent.VK_K) {
-        System.out.println("K was Released");
-        isClicking = false;
-      }
-    }
-
-    public void keyTyped(KeyEvent event) {
-      System.out.println("Typed");
-    }
-*/
 
     public void pressing() {
       try {
         Robot rbt = new Robot();
-        System.out.println("isclick: " + isClicking);
-        while (isClicking) {
-          Thread.sleep(5000);
-          //if(!frame.isActive()) {
-          for (int i = 0; i < Integer.parseInt(repeat.getText()); i++) {
-	      // clicking
-              rbt.mousePress(InputEvent.BUTTON1_MASK);
-              rbt.mouseRelease(InputEvent.BUTTON1_MASK);
-              rbt.delay(Integer.parseInt(delay.getText()));
-            }
-
-            //}
-          //  if(actionEvent.getActionCommand().equals("OFF")) {
-          //    System.out.println("Heree");
-          //    isClicking = false;
-          //    return;
-          //  }
-            return;
+        Thread.sleep(5000);
+        for (int i = 0; i < Integer.parseInt(repeat.getText()); i++) {
+  	      // clicking
+          rbt.mousePress(InputEvent.BUTTON1_MASK);
+          rbt.mouseRelease(InputEvent.BUTTON1_MASK);
+          rbt.delay(Integer.parseInt(delay.getText()));
         }
-      } catch (Exception exc) {};
+      } catch (java.awt.AWTException exc) {}
+      catch (java.lang.InterruptedException exc) {};
     }
 
 
@@ -115,15 +79,14 @@ public class ClickForever implements ActionListener { // implement KeyListener
     ClickForever clickForever = new ClickForever();
     Robot rbt = new Robot();
 
-    //clickForever.createFrame();
-    System.out.println("isclick: " + isClicking);
     while (true) {
-        if(isClicking) {
-          rbt.mousePress(InputEvent.BUTTON1_MASK);
-          rbt.mouseRelease(InputEvent.BUTTON1_MASK);
-          rbt.delay(1000);
-        }
-      //  if(!isClicking) {};
+      System.out.println("Working"); // without printing smth it doesn't work
+      if(isClicking) {
+        // clicking
+        rbt.mousePress(InputEvent.BUTTON1_MASK);
+        rbt.mouseRelease(InputEvent.BUTTON1_MASK);
+        rbt.delay(Integer.parseInt(clickForever.delay.getText()));
+      }
     }
   }
 }
