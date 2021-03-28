@@ -1,8 +1,17 @@
 package classes;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+// importing one-by-one for optimization
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+
+import java.awt.FlowLayout;
+import java.awt.Robot;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.InputEvent;
 
 public class ClickForever implements ActionListener {
   public static boolean isClicking = false;
