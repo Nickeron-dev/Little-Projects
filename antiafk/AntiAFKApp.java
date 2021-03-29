@@ -58,9 +58,11 @@ public class AntiAFKApp implements ActionListener {
         System.out.println("Working"); // doesn't work without it
         if (isON) {
           clicker.keyPress(KeyEvent.VK_W);
+          clicker.delay(300);
           clicker.keyRelease(KeyEvent.VK_W);
           clicker.delay(100);
           clicker.keyPress(KeyEvent.VK_S);
+          clicker.delay(300);
           clicker.keyRelease(KeyEvent.VK_S);
           clicker.delay(30000);
         }
