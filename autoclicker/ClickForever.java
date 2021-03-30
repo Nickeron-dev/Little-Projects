@@ -71,7 +71,7 @@ public class ClickForever implements ActionListener {
     public void pressing() {
       try {
         Robot rbt = new Robot();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         for (int i = 0; i < Integer.parseInt(repeat.getText()); i++) {
   	      // clicking
           rbt.mousePress(InputEvent.BUTTON1_MASK);
