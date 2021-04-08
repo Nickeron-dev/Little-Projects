@@ -5,7 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -65,6 +67,19 @@ public class App implements ActionListener {
 				Connection connection = DriverManager.getConnection(dataBaseURL, dbUser, dbPassword);
 				System.out.println("Connected to database");
 				
+				String command = "SELECT username, password FROM users";
+				
+				Statement selection = connection.createStatement();
+				ResultSet result = selection.executeQuery(command);
+				
+				while (result.next()) {
+					if (username.getText().equals(result.getString("username")) 
+							&& password.getText().equals(result.getString("password"))) {
+						System.out.println("Im here");
+						Information loggedIn = new Information();
+					}
+				}
+				
 			} catch (SQLException exc) {
 				System.out.println("Error with SQL");
 			}
@@ -75,32 +90,6 @@ public class App implements ActionListener {
 			
 			Register reg = new Register();
 			
-			/*
-			JFrame registerFrame = new JFrame("Register");
-			
-			registerFrame.setLayout(new FlowLayout());
-			registerFrame.setSize(300, 230);
-			registerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			registerFrame.setVisible(true);
-			registerFrame.setResizable(false);
-			
-			JTextField usernameRegisterField = new JTextField(20);
-			JTextField passwordRegisterField = new JTextField(20);
-			JTextField emailRegisterField = new JTextField(20);
-			JLabel usernameRegisterLabel = new JLabel("Input username");
-			JLabel passwordRegisterLabel = new JLabel("Input password");
-			JLabel emailRegisterLabel = new JLabel("Input email    ");
-			JButton register = new JButton("Register");
-			register.addActionListener(this);
-			
-			registerFrame.add(usernameRegisterLabel);
-			registerFrame.add(usernameRegisterField);
-			registerFrame.add(passwordRegisterLabel);
-			registerFrame.add(passwordRegisterField);
-			registerFrame.add(emailRegisterLabel);
-			registerFrame.add(emailRegisterField);
-			registerFrame.add(register);
-			*/
 			try {
 				Connection connection = DriverManager.getConnection(dataBaseURL, dbUser, dbPassword);
 				System.out.println("Connected to database");
