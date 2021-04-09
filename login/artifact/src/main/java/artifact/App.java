@@ -12,6 +12,7 @@ import java.sql.Statement;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
@@ -23,6 +24,7 @@ public class App implements ActionListener {
 	public JLabel passwordLabel;
 	public JButton login;
 	public JButton registerAdvice;
+	public boolean isLogged = false;
 	
 	public App() {
 		loginFrame = new JFrame("Login");
@@ -76,31 +78,20 @@ public class App implements ActionListener {
 					if (username.getText().equals(result.getString("username")) 
 							&& password.getText().equals(result.getString("password"))) {
 						System.out.println("Im here");
-						Information loggedIn = new Information();
+						isLogged = true;
+						continue;
 					}
 				}
-				
+				if (isLogged) {
+					Information info = new Information();
+				} else JOptionPane.showMessageDialog(loginFrame, "Something went wrong:(");
 			} catch (SQLException exc) {
 				System.out.println("Error with SQL");
 			}
 		}
 		
 		if (event.getActionCommand().equals("Register")) {
-			//if (username.getText().equals())
-			
 			Register reg = new Register();
-			
-			try {
-				Connection connection = DriverManager.getConnection(dataBaseURL, dbUser, dbPassword);
-				System.out.println("Connected to database");
-				
-				String command = "INSERT INTO users " + 
-						"VALUES (?, ?, ?)";
-				
-			} catch (SQLException exc) {
-				System.out.println("Error with SQL");
-				exc.printStackTrace();
-			}
 		}
 	}
 	

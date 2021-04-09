@@ -6,7 +6,10 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,6 +26,7 @@ public class Register implements ActionListener {
 	public JLabel passwordLabel;
 	public JLabel emailLabel;
 	public JButton register;
+	ArrayList<String> list= new ArrayList<String>();
 	
 	public Register() {
 		registerFrame = new JFrame("Register");
@@ -68,16 +72,49 @@ public class Register implements ActionListener {
 				Connection connection = DriverManager.getConnection(dataBaseURL, dbUser, dbPassword);
 				System.out.println("Connected to database");
 				
-				String addCommand = "INSERT INTO users (username, email, password)" + 
-						" VALUES (?, ?, ?)";
-				
+				String addCommand = "INSERT INTO users (username, email, password)" + " VALUES (?, ?, ?)";
+				//System.out.println("tuta");
 				PreparedStatement statement = connection.prepareStatement(addCommand);
-				
+
 				statement.setString(1, username.getText());
 				statement.setString(2, email.getText());
 				statement.setString(3, password.getText());
-				
+
 				statement.executeUpdate();
+				System.out.println("added");
+				
+				/*
+				String checkCommand = "SELECT * FROM users";
+				
+
+				Statement check = connection.createStatement();
+				ResultSet dbReturn = check.executeQuery(checkCommand);
+				
+				while (dbReturn.next()) {
+					System.out.println(dbReturn.getString("username"));
+					System.out.println(dbReturn.getString("email"));
+					System.out.println(dbReturn.getString("password"));
+					list.add(dbReturn.getString("username"))
+					if (!(username.getText().equals(dbReturn.getString("username")))
+							&& !(password.getText().equals(dbReturn.getString("password")))
+							&& !(email.getText().equals(dbReturn.getString("email")))) {
+						String addCommand = "INSERT INTO users (username, email, password)" + " VALUES (?, ?, ?)";
+						System.out.println("tuta");
+						PreparedStatement statement = connection.prepareStatement(addCommand);
+
+						statement.setString(1, username.getText());
+						statement.setString(2, email.getText());
+						statement.setString(3, password.getText());
+
+						statement.executeUpdate();
+						System.out.println("added");
+						break;
+					} 
+					*/
+					
+				
+				
+				
 				
 			} catch (SQLException exc) {
 				System.out.println("Error with SQL");
