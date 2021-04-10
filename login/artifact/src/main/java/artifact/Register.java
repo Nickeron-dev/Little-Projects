@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
@@ -67,61 +68,40 @@ public class Register implements ActionListener {
 		
 		if (event.getActionCommand().equals("Register")) {
 			//if (username.getText().equals())
-			
-			try {
-				Connection connection = DriverManager.getConnection(dataBaseURL, dbUser, dbPassword);
-				System.out.println("Connected to database");
-				
-				String addCommand = "INSERT INTO users (username, email, password)" + " VALUES (?, ?, ?)";
-				//System.out.println("tuta");
-				PreparedStatement statement = connection.prepareStatement(addCommand);
+			if ((username.getText().length() <= 20 && username.getText().length() >= 4) && (email.getText().length() <= 80 && email.getText().length() >= 15) && (password.getText().length() <= 30 && password.getText().length() >= 5 )) {
+				try {
+					Connection connection = DriverManager.getConnection(dataBaseURL, dbUser, dbPassword);
+					System.out.println("Connected to database");
 
-				statement.setString(1, username.getText());
-				statement.setString(2, email.getText());
-				statement.setString(3, password.getText());
+					String addCommand = "INSERT INTO users (username, email, password)" + " VALUES (?, ?, ?)";
+					//System.out.println("tuta");
+					PreparedStatement statement = connection.prepareStatement(addCommand);
 
-				statement.executeUpdate();
-				System.out.println("added");
-				
-				/*
-				String checkCommand = "SELECT * FROM users";
-				
+					statement.setString(1, username.getText());
+					statement.setString(2, email.getText());
+					statement.setString(3, password.getText());
 
-				Statement check = connection.createStatement();
-				ResultSet dbReturn = check.executeQuery(checkCommand);
-				
-				while (dbReturn.next()) {
-					System.out.println(dbReturn.getString("username"));
-					System.out.println(dbReturn.getString("email"));
-					System.out.println(dbReturn.getString("password"));
-					list.add(dbReturn.getString("username"))
-					if (!(username.getText().equals(dbReturn.getString("username")))
-							&& !(password.getText().equals(dbReturn.getString("password")))
-							&& !(email.getText().equals(dbReturn.getString("email")))) {
-						String addCommand = "INSERT INTO users (username, email, password)" + " VALUES (?, ?, ?)";
-						System.out.println("tuta");
-						PreparedStatement statement = connection.prepareStatement(addCommand);
+					statement.executeUpdate();
+					System.out.println("added");
+					registerFrame.dispose();
 
-						statement.setString(1, username.getText());
-						statement.setString(2, email.getText());
-						statement.setString(3, password.getText());
-
-						statement.executeUpdate();
-						System.out.println("added");
-						break;
-					} 
-					*/
-					
-				
-				
-				
-				
-			} catch (SQLException exc) {
-				System.out.println("Error with SQL");
-				exc.printStackTrace();
+				} catch (SQLException exc) {
+					System.out.println("Error with SQL");
+					exc.printStackTrace();
+				} 
+			} else {
+				if (username.getText().length() > 21 || username.getText().length() < 4) {
+					JOptionPane.showMessageDialog(registerFrame, "Error: Username's length must be between 4 and 20 symbols(inclusive)");
+				}
+				if (email.getText().length() > 80 || email.getText().length() < 15) {
+					JOptionPane.showMessageDialog(registerFrame, "Error: Email's length must be between 15 and 80 symbols(inclusive)");
+				}
+				if (password.getText().length() > 30 || password.getText().length() < 5) {
+					JOptionPane.showMessageDialog(registerFrame, "Error: Password's length must be between 5 and 30 symbols(inclusive)");
+				}
 			}
-			registerFrame.dispose();
-		}
+			//registerFrame.dispose();
+		} 
 	}
 	
 	public static void main(String[] args) {
