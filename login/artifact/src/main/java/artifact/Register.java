@@ -1,5 +1,6 @@
 package artifact;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,6 +36,7 @@ public class Register implements ActionListener {
 		registerFrame.setLayout(new FlowLayout());
 		registerFrame.setSize(300, 230);
 		registerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		registerFrame.getContentPane().setBackground(Color.decode("#019FD7"));
 		
 		register = new JButton("Register");
 		register.addActionListener(this);
