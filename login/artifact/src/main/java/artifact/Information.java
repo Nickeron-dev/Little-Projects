@@ -1,5 +1,6 @@
 package artifact;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -23,28 +23,19 @@ public class Information {
 	ArrayList<ArrayList<String>> data = new ArrayList<ArrayList<String>>();
 	
 	public Information() {
-		frame = new JFrame();
+		frame = new JFrame("Database");
 		
 		frame.setLayout(new FlowLayout());
 		frame.setSize(500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		/*
-		text = new JTextArea(9, 25);
-		text.append("id   username           email      password");
-		scroll = new JScrollPane(text, 
-				JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		
-		frame.add(scroll);
-		*/
-		
+		frame.getContentPane().setBackground(Color.decode("#019FD7"));
+
 		String dbURL = "jdbc:postgresql://localhost:5432/login-app";
 		String user = "postgres";
 		String password = "trumpet";
 		
 		try {
 			Connection connect = DriverManager.getConnection(dbURL, user, password);
-			System.out.println("Information connected to sql db");
 			
 			String selectCommand = "SELECT * FROM users";
 			Statement selectAll = connect.createStatement();
@@ -62,7 +53,6 @@ public class Information {
 				data.get(index - 1).add(dbEmail);
 				data.get(index - 1).add(dbPassword);
 				
-				//text.append("\n" + index + " " + dbUsername + " " + dbEmail + " " + dbPassword);
 			}
 			
 			
@@ -71,27 +61,25 @@ public class Information {
 			e.printStackTrace();
 		}
 		
-		System.out.println(data.size());
 		String[] columns = {"id", "username", "email", "password"};
 		String[][] dataArray = new String[data.size()][4];
 		for (int k = 0; k < dataArray.length; k++) {
 			for (int i = 0; i < dataArray[k].length; i++) {
-				dataArray[k][i] = data.get(k).get(i);
+				dataArray[k][i] = data.get(k).get(i); // moving from ArrayList to String[][]
 			}
 		}
 		outputDB = new JTable(dataArray, columns);
-		
+		outputDB.setBackground(Color.decode("#FCC230"));
 		outputDB.getColumnModel().getColumn(0).setPreferredWidth(5);
 		outputDB.getColumnModel().getColumn(1).setPreferredWidth(70);
 		outputDB.getColumnModel().getColumn(2).setPreferredWidth(100);
 		outputDB.getColumnModel().getColumn(3).setPreferredWidth(50);
 		scroll = new JScrollPane(outputDB, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
 				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-		System.out.println(Arrays.deepToString(dataArray));
 		
 		frame.add(scroll);
 		frame.setVisible(true);
-		frame.setResizable(true); // might will be changed
+		frame.setResizable(false);
 	}
 	
 	

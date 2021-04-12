@@ -1,18 +1,15 @@
 package artifact;
 
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -41,45 +38,49 @@ public class App implements ActionListener {
 		loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		loginFrame.getContentPane().setBackground(Color.decode("#019FD7"));
 		
-		login = new JButton("  Login  ");
-		login.setBounds(95, 150, 100, 30);
-		login.setBackground(Color.decode("#FCC230"));
-		login.addActionListener(this);
-		registerAdvice = new JButton("Register");
-		registerAdvice.addActionListener(this);
-		registerAdvice.setBounds(200, 200, 80, 20);
-		registerAdvice.setBackground(Color.decode("#FCC230"));
-		registerAdvice.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 12));
+		welcomeLabel = new JLabel("Welcome");
+		welcomeLabel.setBounds(10, 5, 180, 20);
+		welcomeLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
+		welcomeLabel.setForeground(Color.decode("#EEF9FC"));
 		
-		username = new JTextField(20);
-		username.setBounds(30, 70, 230, 25);
-		username.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
-		password = new JTextField(30);
-		password.setBounds(30, 115, 230, 25);
-		password.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+		loginToUse = new JLabel("Login to get started!");
+		loginToUse.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+		loginToUse.setForeground(Color.decode("#EEF9FC"));
+		loginToUse.setBounds(10, 25, 150, 20);
 		
 		usernameLabel = new JLabel("Input username");
 		usernameLabel.setBounds(100, 45, 100, 30);
 		usernameLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 12));
 		usernameLabel.setForeground(Color.decode("#EEF9FC"));
 		passwordLabel = new JLabel("Input password");
+		
+		username = new JTextField(20);
+		username.setBounds(30, 70, 230, 25);
+		username.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+		
 		passwordLabel.setBounds(100, 90, 100, 30);
 		passwordLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 12));
 		passwordLabel.setForeground(Color.decode("#EEF9FC"));
-		welcomeLabel = new JLabel("Welcome");
-		welcomeLabel.setBounds(10, 5, 180, 20);
-		welcomeLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-		welcomeLabel.setForeground(Color.decode("#EEF9FC"));
-		loginToUse = new JLabel("Login to get started!");
-		loginToUse.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
-		loginToUse.setForeground(Color.decode("#EEF9FC"));
-		loginToUse.setBounds(10, 25, 150, 20);
+		
+		password = new JTextField(30);
+		password.setBounds(30, 115, 230, 25);
+		password.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
+		
+		login = new JButton("  Login  ");
+		login.setBounds(95, 150, 100, 30);
+		login.setBackground(Color.decode("#FCC230"));
+		login.addActionListener(this);
+		
 		newToUs = new JLabel("New to us?");
 		newToUs.setBounds(120, 200, 80, 20);
 		newToUs.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
 		newToUs.setForeground(Color.decode("#EEF9FC"));
 		
-		//registerAdvice = new JLabel("New to us? ");
+		registerAdvice = new JButton("Register");
+		registerAdvice.addActionListener(this);
+		registerAdvice.setBounds(200, 200, 80, 20);
+		registerAdvice.setBackground(Color.decode("#FCC230"));
+		registerAdvice.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 12));
 		
 		loginFrame.add(welcomeLabel);
 		loginFrame.add(loginToUse);
@@ -92,7 +93,7 @@ public class App implements ActionListener {
 		loginFrame.add(registerAdvice);
 		
 		loginFrame.setVisible(true);
-		loginFrame.setResizable(true);
+		loginFrame.setResizable(false);
 		
 	}
 	
@@ -102,7 +103,6 @@ public class App implements ActionListener {
 		String dbPassword = "trumpet";
 		
 		if (event.getActionCommand().equals("  Login  ")) {
-			//if (username.getText().equals())
 			try {
 				Connection connection = DriverManager.getConnection(dataBaseURL, dbUser, dbPassword);
 				System.out.println("Connected to database");
@@ -115,13 +115,12 @@ public class App implements ActionListener {
 				while (result.next()) {
 					if (username.getText().equals(result.getString("username")) 
 							&& password.getText().equals(result.getString("password"))) {
-						System.out.println("Im here");
 						isLogged = true;
 						continue;
 					}
 				}
 				if (isLogged) {
-					Information info = new Information();
+					new Information();
 				} else JOptionPane.showMessageDialog(loginFrame, "Something went wrong:(");
 			} catch (SQLException exc) {
 				System.out.println("Error with SQL");
@@ -129,7 +128,7 @@ public class App implements ActionListener {
 		}
 		
 		if (event.getActionCommand().equals("Register")) {
-			Register reg = new Register();
+			 new Register();
 		}
 	}
 	
