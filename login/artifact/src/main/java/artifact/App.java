@@ -66,7 +66,7 @@ public class App implements ActionListener {
 		password.setBounds(30, 115, 230, 25);
 		password.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 15));
 		
-		login = new JButton("  Login  ");
+		login = new JButton("  Log in  ");
 		login.setBounds(95, 150, 100, 30);
 		login.setBackground(Color.decode("#FCC230"));
 		login.addActionListener(this);
@@ -102,7 +102,7 @@ public class App implements ActionListener {
 		String dbUser = new String("postgres");
 		String dbPassword = "trumpet";
 		
-		if (event.getActionCommand().equals("  Login  ")) {
+		if (event.getActionCommand().equals("  Log in  ")) {
 			try {
 				Connection connection = DriverManager.getConnection(dataBaseURL, dbUser, dbPassword);
 				System.out.println("Connected to database");
