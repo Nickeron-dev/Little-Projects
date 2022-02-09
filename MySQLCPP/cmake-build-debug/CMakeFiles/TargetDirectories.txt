@@ -1,0 +1,3 @@
+/Users/illiakoskin/Documents/git/Medium-Projects/MySQLCPP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/illiakoskin/Documents/git/Medium-Projects/MySQLCPP/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/illiakoskin/Documents/git/Medium-Projects/MySQLCPP/cmake-build-debug/CMakeFiles/MySQLCPP.dir

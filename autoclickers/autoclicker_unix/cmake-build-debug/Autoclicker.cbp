@@ -5,41 +5,41 @@
 		<Option title="Autoclicker"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\..\opt\homebrew\;CMake Files\..\..\..\..\..\..\opt\homebrew\lib\;CMake Files\..\..\..\..\..\..\opt\homebrew\lib\cmake\;CMake Files\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\..\..\opt\homebrew\;CMake Files\..\..\..\..\..\..\..\opt\homebrew\lib\;CMake Files\..\..\..\..\..\..\..\opt\homebrew\lib\cmake\;CMake Files\..\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug"/>
+				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug"/>
+				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug"/>
+				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Autoclicker">
-				<Option output="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Autoclicker" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug"/>
+				<Option output="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Autoclicker" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 Autoclicker"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 Autoclicker"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Autoclicker/fast">
-				<Option output="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Autoclicker" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug"/>
+				<Option output="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Autoclicker" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,36 +77,36 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 Autoclicker/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 Autoclicker/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
 		<Unit filename="/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/ApplicationServices.framework">
 			<Option target="Autoclicker"/>
 		</Unit>
-		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/main.cpp">
+		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/main.cpp">
 			<Option target="Autoclicker"/>
 		</Unit>
-		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/CMakeLists.txt">
+		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/../../../../../../opt/homebrew/lib/cmake/SFML/SFMLConfig.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
+		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/../../../../../../../opt/homebrew/lib/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/../../../../../../opt/homebrew/lib/cmake/SFML/SFMLConfigDependencies.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
+		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/../../../../../../../opt/homebrew/lib/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/../../../../../../opt/homebrew/lib/cmake/SFML/SFMLConfigVersion.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
+		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/../../../../../../../opt/homebrew/lib/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/../../../../../../opt/homebrew/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
+		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/../../../../../../../opt/homebrew/lib/cmake/SFML/SFMLSharedTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/../../../../../../opt/homebrew/lib/cmake/SFML/SFMLSharedTargets.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
+		<Unit filename="/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/../../../../../../../opt/homebrew/lib/cmake/SFML/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\homebrew\lib\cmake\SFML\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

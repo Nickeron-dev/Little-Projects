@@ -1,4 +1,4 @@
-# Install script for directory: /Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix
+# Install script for directory: /Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/illiakoskin/Documents/git/Medium-Projects/autoclicker_unix/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/illiakoskin/Documents/git/Medium-Projects/autoclickers/autoclicker_unix/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
